@@ -1,0 +1,11 @@
+# 포트폴리오 제출용 파일만 추적
+/*
+!/.gitignore
+!/README.md
+!/DEVELOPMENT_HISTORY.md
+!/projects/
+projects/**/.DS_Store
+projects/**/.env*
+projects/**/node_modules/
+projects/**/Library/
+projects/**/Temp/

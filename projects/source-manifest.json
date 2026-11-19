@@ -1,0 +1,38 @@
+[
+  {
+    "file": "projects/teamfight/source/BattleAugmentRules.cs",
+    "source_filename": "BattleAugmentRules.cs",
+    "sha256": "68191481e8d1fc3e4692ec0f3686970ff8539e8478905a607449bd5e5c2f0e04",
+    "captured_on": "2026-11-19"
+  },
+  {
+    "file": "projects/teamfight/source/DuelSimulation.Augments.cs",
+    "source_filename": "DuelSimulation.Augments.cs",
+    "sha256": "f130f93381d64a4d08d1ef65a351e373c58215cd1f273d701cac52fa08d9d1ac",
+    "captured_on": "2026-11-19"
+  },
+  {
+    "file": "projects/teamfight/source/AugmentBattleChecks.cs",
+    "source_filename": "AugmentBattleChecks.cs",
+    "sha256": "78524016fea04a9cd84418717fea272b67222882888a2f0f1090a4eae72e7d64",
+    "captured_on": "2026-11-19"
+  },
+  {
+    "file": "projects/ego-system/source/SceneLoader.cs",
+    "source_filename": "SceneLoader.cs",
+    "sha256": "c78097351aa5d22be9dce9cad59b6b167a692f55712ff746e0c30d04ce453e99",
+    "captured_on": "2026-11-19"
+  },
+  {
+    "file": "projects/ego-system/source/CollectionManager.cs",
+    "source_filename": "CollectionManager.cs",
+    "sha256": "4207a9d85849ec4db646b08d6b8262e9e31bde0fec02fefc6ff8baf389217831",
+    "captured_on": "2026-11-19"
+  },
+  {
+    "file": "projects/ego-system/source/SaveSlotManager.cs",
+    "source_filename": "SaveSlotManager.cs",
+    "sha256": "7ea2b088bf3022b3261abc33574a942245cc34600be154aa4f07cebb1fe48c7a",
+    "captured_on": "2026-11-19"
+  }
+]
