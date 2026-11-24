@@ -12,7 +12,7 @@
 
 - [서비스 소개 영상 · 1분 16초](media/intro.mp4)
 - [팀 발표 자료 발췌 · 원본 1·6·7쪽](media/presentation.pdf)
-- [상세 기획 문서](https://app.notion.com/p/41de2140367a81978d0de9381ea28ef2)
+- [상세 기획 문서](https://sedate-lemonade-73b.notion.site/41de2140367a81978d0de9381ea28ef2)
 
 영상에서 학습 대시보드와 학습 지원 화면을 볼 수 있습니다. 현재 공개한 자료는 소개 영상과 발표 자료이며, 실행 가능한 소스는 포함되어 있지 않습니다.
 

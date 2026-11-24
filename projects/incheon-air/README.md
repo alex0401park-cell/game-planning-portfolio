@@ -8,7 +8,7 @@
 - [확인한 프론트엔드 소스 버전](https://github.com/lc-moon/26_2_AICapstone_service/tree/273861f41a542df9b98d667706fd72ec2d4b7c1f/web)
 - [해당 버전 실행·구현 문서](https://github.com/lc-moon/26_2_AICapstone_service/blob/273861f41a542df9b98d667706fd72ec2d4b7c1f/web/README.md)
 
-저는 `web/`의 화면 구현과 API 연동을 맡았습니다. 모델과 백엔드는 팀원들이 담당했습니다. 위 링크는 로컬 Git 원격 주소와 커밋을 바탕으로 연결했으며 외부 계정의 열람 권한은 아직 확인하지 않았습니다.
+저는 `web/`의 화면 구현과 API 연동을 맡았습니다. 모델과 백엔드는 팀원들이 담당했습니다. 팀 저장소와 지도 상태 복원·모바일 검색의 변경 기록은 비로그인 상태의 공개 접근을 확인했습니다.
 
 ## 구현 사례
 

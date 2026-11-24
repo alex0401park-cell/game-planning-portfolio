@@ -5,7 +5,7 @@ public enum AugmentTier { Silver, Gold, Prismatic }
 public enum AugmentEffect
 {
     AttackSpeed, HealthAndSize, MovementSpeed, TowerAttackSpeed, NextRoundEnergy,
-    HealthDamage, TotalAttackSpeed, Range, Cost, Twins, StationaryTaunt, Unlimited
+    HealthDamage, TotalAttackSpeed, Range, Cost, Twins, StationaryTaunt, Unlimited, FireEmbers, LightningMark, FrostShatter, PoisonZone
 }
 
 public static class BattleAugmentRules
@@ -17,25 +17,28 @@ public static class BattleAugmentRules
         return roll < 40 ? AugmentTier.Silver : roll < 75 ? AugmentTier.Gold : AugmentTier.Prismatic;
     }
     public static AugmentTier Tier(AugmentEffect effect)
-        => effect <= AugmentEffect.MovementSpeed ? AugmentTier.Silver
+        => SpellKind(effect) >= 0 ? AugmentTier.Gold : effect <= AugmentEffect.MovementSpeed ? AugmentTier.Silver
         : effect <= AugmentEffect.Range ? AugmentTier.Gold : AugmentTier.Prismatic;
     public static bool TargetsUnit(AugmentEffect effect)
         => effect != AugmentEffect.TowerAttackSpeed && effect != AugmentEffect.NextRoundEnergy;
     public static int Encode(AugmentEffect effect, int kind) => (int)effect * 65536 + kind + 1;
     public static AugmentEffect Effect(int code) => (AugmentEffect)(code / 65536);
     public static int Kind(int code) => code % 65536 - 1;
-    public static int[] Offer(AugmentTier tier, int[] deck, Random random)
+    public static int SpellKind(AugmentEffect effect) => effect >= AugmentEffect.FireEmbers && effect <= AugmentEffect.PoisonZone ? (int)effect - (int)AugmentEffect.FireEmbers : -1;
+    public static int[] Offer(AugmentTier tier, int[] deck, Random random, Func<int,int> spellKind = null, Func<AugmentEffect,bool> eligible = null)
     {
         var effects = new List<List<int>>();
         int combinations = 0;
         foreach (AugmentEffect effect in Enum.GetValues(typeof(AugmentEffect)))
         {
-            if (Tier(effect) != tier) continue;
+            if (Tier(effect) != tier || eligible != null && !eligible(effect)) continue;
             var pool = new List<int>();
             if (TargetsUnit(effect))
             {
                 foreach (int kind in deck)
                 {
+                    int spell = spellKind == null ? -1 : spellKind(kind);
+                    if (SpellKind(effect) >= 0 ? spell != SpellKind(effect) : spell >= 0) continue;
                     int code = Encode(effect, kind);
                     if (!pool.Contains(code)) pool.Add(code);
                 }

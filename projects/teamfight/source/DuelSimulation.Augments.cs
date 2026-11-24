@@ -50,7 +50,7 @@ public sealed partial class DuelSimulation
                 pool = new int[definitions.Length];
                 for (int kind = 0; kind < pool.Length; kind++) pool[kind] = kind;
             }
-            augmentOffers[team] = BattleAugmentRules.Offer(CurrentAugmentTier, pool, augmentRandom);
+            augmentOffers[team] = BattleAugmentRules.Offer(CurrentAugmentTier, pool, augmentRandom, kind => definitions[kind].Spell, effect => BattleAugmentRules.SpellKind(effect) < 0 || !spellAugments[team,BattleAugmentRules.SpellKind(effect)]);
             augmentPicks[team] = -1;
         }
         SelectingAugment = true; AugmentSeconds = BattleAugmentRules.SelectionSeconds;
@@ -79,6 +79,8 @@ public sealed partial class DuelSimulation
     void ApplyAugment(int team, int code)
     {
         var effect = BattleAugmentRules.Effect(code);
+        int spellKind = BattleAugmentRules.SpellKind(effect);
+        if (spellKind >= 0) { spellAugments[team, spellKind] = true; return; }
         if (effect == AugmentEffect.TowerAttackSpeed) { towerAttackRate[team] *= 1.2f; return; }
         if (effect == AugmentEffect.NextRoundEnergy) { nextRoundEnergy[team] += 10; return; }
         if (originalDefinitions == null)
